@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- <h1 style="background-color: antiquewhite;">台南推薦咖啡廳</h1> -->
+    <header>
+        <nav class="">
+            <div>
+                <a href="index.html" class="nav-logo">
+                    <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                    <span class="nav-logo-word"><b>Our Memory</b></span>
+                </a>
+            </div>
+            <div class="nav-btns">
+                <img id="muteIcon" class="mute-icon" src="./taiwan/music/mute.png" width="20px" alt="音訊切換圖示">
+                <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+                <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+                <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+            </div>
+        </nav>
+    </header>
+    <audio id="audio" loop muted>
+        <source src="./taiwan/music/I Hope It All Works Out.mp3" type="audio/mpeg">
+    </audio>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <h1 style="font-weight: 700;">咖啡廳推薦</h1>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+        <div class="coffee-card-row">
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/na.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 納咖啡</span>
+                    </div>
+                    <div class="coffee-text">Tel: 0910-745-254</div>
+                    <div class="coffee-text">Adr.701台南市東區東門路二段252號</div>
+                    <div class="coffee-text">Open time: 17:00–01:00</div>
+                </div>
+            </div>
+
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/longest.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> Dreamcatcher Baking Studio</span>
+                    </div>
+                    <div class="coffee-text">Tel: X</div>
+                    <div class="coffee-text">Adr.704台南市北區開元路394巷41弄35號</div>
+                    <div class="coffee-text">Open time: 18:00–00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coffee-card-row">
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/islander.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 島內移民</span>
+                    </div>
+                    <div class="coffee-text">Tel: X</div>
+                    <div class="coffee-text">70143台南市東區長榮路三段50巷6號</div>
+                    <div class="coffee-text">Open time: 17:00–01:00</div>
+                </div>
+            </div>
+
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/bowl.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 丸裏小酒館</span>
+                    </div>
+                    <div class="coffee-text">Tel: 06-2143909</div>
+                    <div class="coffee-text">Adr.700台南市中西區永福路一段72號</div>
+                    <div class="coffee-text">Open time: 20:00–00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coffee-card-row">
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/mueum.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 南美春室 The POOL</span>
+                    </div>
+                    <div class="coffee-text">Tel.06-2211916</div>
+                    <div class="coffee-text">Adr.700台南市中西區忠義路二段1號5樓</div>
+                    <div class="coffee-text">Open time : 10:00–18:00</div>
+                </div>
+            </div>
+
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/room.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 餘事 Yu Studio</span>
+                    </div>
+                    <div class="coffee-text">Tel. X</div>
+                    <div class="coffee-text">Adr.70046台南市中西區府中街94號2樓</div>
+                    <div class="coffee-text">Open time : 15:00–23:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coffee-card-row">
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/sparrow.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 雀色喫茶 sunsetdessert.lab</span>
+                    </div>
+                    <div class="coffee-text">Tel. X</div>
+                    <div class="coffee-text">Adr.700台南市中西區國華街三段123之188號永樂市場2樓</div>
+                    <div class="coffee-text">Open time : 14:00–23:00</div>
+                </div>
+            </div>
+
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/butter.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 奶油小聲</span>
+                    </div>
+                    <div class="coffee-text">Tel.06-2510352</div>
+                    <div class="coffee-text">Adr.704台南市北區公園路451巷65號</div>
+                    <div class="coffee-text">Open time : 13:00–21:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coffee-card-row">
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/dog.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> Wakamodog</span>
+                    </div>
+                    <div class="coffee-text">Tel. X</div>
+                    <div class="coffee-text">Adr.700台南市中西區城隍街68號</div>
+                    <div class="coffee-text">Open time : 12:00–19:00</div>
+                </div>
+            </div>
+
+            <div class="coffee-card">
+                <img class="coffee-img" src="./taiwan/coffee/resting.jpg" alt="">
+                <div class="coffee-info">
+                    <div class="coffee-title">
+                        <span> 客憩café ケーキ</span>
+                    </div>
+                    <div class="coffee-text">Tel. X</div>
+                    <div class="coffee-text">Adr.701台南市東區勝利路49號</div>
+                    <div class="coffee-text">Open time : 15:00–00:00</div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+<script>
+    var audio = document.getElementById('audio');
+    var muteIcon = document.getElementById('muteIcon');
+    muteIcon.addEventListener('click', function () {
+        if (audio.muted) {
+            audio.play();
+            audio.muted = false;
+            muteIcon.src = './taiwan/music/volume.png';
+        } else {
+
+            audio.muted = true;
+            muteIcon.src = './taiwan/music/mute.png';
+        }
+    });
+</script>
+
+</html>

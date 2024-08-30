@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Tainan</title>
+</head>
+
+<body style="background:none;margin: 0;background-color: antiquewhite;">
+    <nav class="">
+        <div>
+            <a href="index.html" class="nav-logo">
+                <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                <span class="nav-logo-word"><b>Our Memory</b></span>
+            </a>
+        </div>
+        <div class="nav-btns">
+            <img id="muteIcon" class="mute-icon" src="./taiwan/music/mute.png" width="20px" alt="音訊切換圖示">
+            <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+            <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+            <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+        </div>
+    </nav>
+    <!-- <h1>This is Tainan</h1> -->
+    <!-- 這邊有改 -->
+    <audio id="audio" loop muted>
+        <source src="./taiwan/music/Good To Be.mp3" type="audio/mpeg">
+    </audio>
+    <div>
+        <iframe src="https://giphy.com/embed/bJHEzxb2uKtzmSYJgU" width="480" height="480" frameBorder="0"
+            class="gif-floating" id="sunshine"></iframe>
+        <div class="overlay" onclick="hello()"></div>
+    </div>
+
+    <div>
+        <div><img src="./taiwan/TainanPic/tainanbg.jpg" alt="" style="width: 100%;
+            height: auto" id="captainan"></div>
+        <span id="taii" class="t1">台</span>
+        <span id="nann" class="t1">南</span>
+        <div class="cap">起源</div> <br>
+        <div id="origin_text">這邊直接算是相遇的起點，還真的體驗了很多蠻酷的事情，去了超多地方玩，也吃了超多東西！</div>
+
+    </div>
+    <hr style=" border-top: 20px  black; color:rgba(0, 0, 0, 0.318)">
+
+    <div>
+        <div class="cap">美食</div>
+        <section class="features">
+            <figure>
+                <a href="coffeeGo.html"><img src="./taiwan/TainanPic/coffee1.JPG" alt="coffee shop"></a>
+                <figcaption><b>咖啡廳</b></figcaption>
+            </figure>
+            <figure>
+                <img src="./taiwan/TainanPic/beefsoup1.JPG" alt="beef soup">
+                <figcaption><b>牛肉湯</b></figcaption>
+            </figure>
+            <figure>
+                <img src="./taiwan/TainanPic/icecream1.JPG" alt="ice cream">
+                <figcaption><b>全家霜淇淋</b></figcaption>
+            </figure>
+
+        </section>
+
+    </div>
+    <hr style=" border-top:20px ; color:rgba(0, 0, 0, 0.318)">
+
+    <div>
+        <div class="cap">玩耍紀錄</div>
+        <section class="features">
+            <figure>
+                <iframe width="400" height="224" src="https://www.youtube.com/embed/kcvMJg-7Rtg?si=UXARMpRCPALRlCJJ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <figcaption style="display: flex; justify-content: start;"><b>萬聖節</b></figcaption>
+            </figure>
+            <figure>
+                <iframe width="400" height="224" src="https://www.youtube.com/embed/FMgCsjMItOA?si=-qLoY1diaNmViDVQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <figcaption style="display: flex; justify-content: start;"><b>空山祭</b></figcaption>
+            </figure>
+        </section>
+    </div>
+    <hr style=" border-top: 20px  black; color:rgba(0, 0, 0, 0.318)">
+
+    <div>
+        <div class="cap">適合的音樂</div>
+        <br>
+        <div style="  display: flex; justify-content: center;"><audio src=" ./taiwan/music/Belong Together.mp3" autoplay
+                muted controls></audio></div>
+    </div>
+
+</body>
+
+<script>
+    function hello() {
+        alert("早安您好！");
+        var dialog = $('<div class="dialog" title="Warning">沒啥!繼續早安!</div>');
+
+        $("body").append(dialog);
+
+        dialog.dialog({
+            modal: true,
+            autoOpen: true,
+            buttons: {
+                早安呀: function () {
+                    $(this).dialog("close");
+                }
+            },
+            close: function () {
+                $(this).remove();
+
+            }
+        });
+        showDialog();
+    }
+
+    var audio = document.getElementById('audio');
+    var muteIcon = document.getElementById('muteIcon');
+    muteIcon.addEventListener('click', function () {
+        if (audio.muted) {
+            audio.play();
+            audio.muted = false;
+            muteIcon.src = './taiwan/music/volume.png';
+        } else {
+
+            audio.muted = true;
+            muteIcon.src = './taiwan/music/mute.png';
+        }
+    });
+</script>
+
+</html>

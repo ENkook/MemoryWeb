@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>My Webpage</title>
+</head>
+
+<body style="overflow-y: hidden;">
+
+    <header>
+        <!--nav>
+
+            <div class="gocha"> Home </div>
+            <a class="gocha" href="page2.html">page 2</a>
+            <a class="gocha" href="page3.html">page 3</a>
+
+
+        </nav-->
+        <!-- navbar navbar-default fixed-top -->
+        <nav class="">
+            <div>
+                <a href="index.html" class="nav-logo">
+                    <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                    <span class="nav-logo-word"><b>Our Memory</b></span>
+                </a>
+            </div>
+
+            <div class="nav-btns">
+                <img id="muteIcon" class="mute-icon" src="./taiwan/music/mute.png" width="20px" alt="音訊切換圖示">
+                <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+                <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+                <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+            </div>
+        </nav>
+
+    </header>
+
+    <section>
+
+        <!-- <audio src="./taiwan/music/Belong Together.mp3" autoplay controls style="display: none;"></audio> -->
+        <audio id="audio" loop muted>
+            <source src="./taiwan/music/Belong Together.mp3" type="audio/mpeg">
+        </audio>
+
+        <div style="height: 20px">
+
+        </div>
+
+        <!-- iframe src="https://giphy.com/embed/NTpktSQ9w1uCOpFgsP" width="480" height="479" frameBorder="0"
+            class="giphy-embed" allowFullScreen></iframe -->
+
+        <!--p><a href="https://giphy.com/gifs/love-heart-smile-you-make-my-NTpktSQ9w1uCOpFgsP">via GIPHY</a></p-->
+        <div>
+            <table id="memory_table"
+                style="display: flex;justify-content: center; align-items: center;position: relative; ">
+                <tr>
+                    <td><img src="./taiwan/memory/1.jpg" alt="" class="memory" style="animation: fadeIn 3s forwards;">
+                    </td>
+                    <td><img src="./taiwan/memory/2.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 0.33s forwards;">
+                    </td>
+                    <td><img src="./taiwan/memory/3.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 0.66s forwards;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="./taiwan/memory/4.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 1s forwards;">
+                    </td>
+                    <td><img src="./taiwan/memory/5.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 1.33s forwards;">
+                    </td>
+                    <td><img src="./taiwan/memory/6.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 1.66s forwards;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="./taiwan/memory/7.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 2s forwards;">
+                    </td>
+                    <td><img src="./taiwan/memory/8.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 2.33s forwards;">
+                    </td>
+                    <td><img src="./taiwan/memory/9.jpg" alt="" class="memory"
+                            style="animation: fadeIn 3s 2.66s forwards;">
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <button onclick="location.href ='Taiwan.html'" id="place_btn" hidden="true">看看我們去過哪裡吧!</button>
+        <button onclick="location.href='page2.html'" id="page2_btn" hidden="true">比較想知道今日運勢捏orz</button>
+    </section>
+
+    <footer>
+
+    </footer>
+    <script>
+        setTimeout(function () {
+            $('#place_btn').fadeIn(2000)
+            place_btn.hidden = false
+            $('#page2_btn').fadeIn(2000)
+            page2_btn.hidden = false
+        }, 3200);//temp
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const audio = new Audio('./taiwan/audio/cat.mp3');
+        //     if (!audio.played.length) {
+        //         audio.play();
+        //     }
+        // });
+        var audio = document.getElementById('audio');
+        var muteIcon = document.getElementById('muteIcon');
+        muteIcon.addEventListener('click', function () {
+            if (audio.muted) {
+                audio.play();
+                audio.muted = false;
+                muteIcon.src = './taiwan/music/volume.png';
+            } else {
+
+                audio.muted = true;
+                muteIcon.src = './taiwan/music/mute.png';
+            }
+        });
+    </script>
+
+</body>
+
+
+</html>

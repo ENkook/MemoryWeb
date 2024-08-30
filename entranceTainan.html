@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Tainan Entrance</title>
+</head>
+
+<body style="overflow: hidden; ">
+    <nav class="">
+        <div>
+            <a href="index.html" class="nav-logo">
+                <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                <span class="nav-logo-word"><b>Our Memory</b></span>
+            </a>
+        </div>
+        <div class="nav-btns">
+            <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+            <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+            <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+        </div>
+    </nav>
+    <img src="./taiwan/TainanPic/carrie.png" alt="carrie" style="float: right;" class="people" id="carrie">
+    <img src="./taiwan/TainanPic/doris.png" alt="doris" style="float: left;" class="people" id="doris">
+    <a href="pageTainan.html"><img src="./taiwan/TainanPic/fire.gif" alt="fire" id="fire" hidden="true"></a>
+    <p onclick="showfire()" id="fireNext" hidden="true">點擊火焰進入下一頁<span id="dot1" hidden="true">.</span><span id="dot2"
+            hidden="true">.</span><span id="dot3" hidden="true">.</span></p>
+
+    <script>
+        var carrie = document.getElementById('carrie')
+        var dot1 = document.getElementById('dot1')
+        var dot2 = document.getElementById('dot2')
+        var dot3 = document.getElementById('dot3')
+        let currentDot = 1;
+        const totalDots = 3;
+
+        setTimeout(function () {
+            var fire = document.getElementById('fire')
+            var fireNext = document.getElementById('fireNext')
+            fire.hidden = false
+            fireNext.hidden = false
+            // dot1.hidden = false
+            // dot2.hidden = false
+            // dot3.hidden = false
+            setInterval(displayDots, 1000);
+            setInterval(hideAllDots, 4000);
+        }, 3500)
+
+        carrie.addEventListener('click', function () {
+            const audio = new Audio('./taiwan/audio/fire4.mp3');
+            // if (!audio.played.length) {
+            //     audio.play();
+            // }
+            audio.play();
+        })
+
+        function showfire() {
+            const audio = new Audio('./taiwan/audio/fire4.mp3');
+            // if (!audio.played.length) {
+            //     audio.play();
+            // }
+            // audio.play();
+        }
+
+        function hideAllDots() {
+            dot1.hidden = true
+            dot2.hidden = true
+            dot3.hidden = true
+        }
+
+        function showDot(dotId) {
+            document.getElementById(dotId).hidden = false;
+        }
+
+
+
+        function displayDots() {
+            // hideAllDots();
+
+            if (currentDot == 1) {
+                showDot('dot1');
+                currentDot++;
+            }
+            else if (currentDot == 2) {
+                showDot('dot2');
+                currentDot++;
+            }
+            else if (currentDot == 3) {
+                showDot('dot3');
+                currentDot++;
+            }
+            else {
+                currentDot = 1; // 重置為第一個點
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

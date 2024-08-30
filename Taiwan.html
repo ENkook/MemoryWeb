@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>My Webpage</title>
+</head>
+<style>
+    .gocha {
+        width: 500px;
+        text-shadow: 10px;
+    }
+
+    .icheckbox,
+    .iradio {
+        margin-left: 10px;
+    }
+</style>
+
+<body style="overflow-y: hidden;">
+
+    <header>
+        <!--nav>
+
+            <div class="gocha"> Home </div>
+            <a class="gocha" href="page2.html">page 2</a>
+            <a class="gocha" href="page3.html">page 3</a>
+
+
+        </nav-->
+        <!-- navbar navbar-default fixed-top -->
+        <nav class="">
+            <div>
+                <a href="index.html" class="nav-logo">
+                    <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                    <span class="nav-logo-word"><b>Our Memory</b></span>
+                </a>
+            </div>
+            <div class="nav-btns">
+                <img id="muteIcon" class="mute-icon" src="./taiwan/music/mute.png" width="20px" alt="音訊切換圖示">
+                <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+                <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+                <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <audio id="audio" loop muted>
+            <source src="./taiwan/music/Belong Together.mp3" type="audio/mpeg">
+        </audio>
+        <!-- <audio id="index_music" src="./taiwan/music/Belong Together.mp3" loop></audio> -->
+        <h1 id="formTitle" style="color: rgb(143, 92, 15);"><b>選擇你想看的地區:</b></h1>
+        <form id="regionForm">
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showTaipei()" type="radio" id="taipei1" name="region"
+                value="台北">
+            <label for="taipei1">台北</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showNewtaipei()" type="radio" id="newTaipei1" name="region"
+                value="新北">
+            <label for="newTaipei1">新北</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showKeelung()" type="radio" id="keelung1" name="region"
+                value="基隆">
+            <label for="keelung1">基隆</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showTaoyuan()" type="radio" id="taoyuan1" name="region"
+                value="桃園">
+            <label for="taoyuan1">桃園</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showShinchu()" type="radio" id="hsinchu1" name="region"
+                value="新竹">
+            <label for="hsinchu1">新竹</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showMioli()" type="radio" id="miaoli1" name="region"
+                value="苗栗">
+            <label for="miaoli1">苗栗</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showTaichung()" type="radio" id="taichung1" name="region"
+                value="台中">
+            <label for="taichung1">台中</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showChanghua()" type="radio" id="changhua1" name="region"
+                value="彰化">
+            <label for="changhua1">彰化</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showYunlin()" type="radio" id="yunlin1" name="region"
+                value="雲林">
+            <label for="yunlin1">雲林</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showChiayi()" type="radio" id="chiayi1" name="region"
+                value="嘉義">
+            <label for="chiayi1">嘉義</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showTainan()" type="radio" id="tainan1" name="region"
+                value="台南">
+            <label for="tainan1">台南</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showKaoshung()" type="radio" id="kaohsiung1" name="region"
+                value="高雄">
+            <label for="kaohsiung1">高雄</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showPintong()" type="radio" id="pindong1" name="region"
+                value="屏東">
+            <label for="pindong1">屏東</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showYilan()" type="radio" id="yilan1" name="region"
+                value="宜蘭">
+            <label for="yilan1">宜蘭</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showHualien()" type="radio" id="hualien1" name="region"
+                value="花蓮">
+            <label for="hualien1">花蓮</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showTaitung()" type="radio" id="taitung1" name="region"
+                value="台東">
+            <label for="taitung1">台東</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showNantou()" type="radio" id="nantou1" name="region"
+                value="南投">
+            <label for="nantou1">南投</label><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input onclick="showPonghu()" type="radio" id="penghu1" name="region"
+                value="澎湖">
+            <label for="penghu1">澎湖</label><br>
+
+
+
+        </form>
+        <!-- <div><img src="./taiwan/major_map/yilan.png" alt="yilan" style="width: 400px; " onclick="check()"></div> -->
+        <div class="image-container">
+            <img src="./taiwan/major_map/taiwan-map.png" alt="taiwan" style="width: 400px " id="taiwan" class="pho">
+            <img src="./taiwan/major_map/yilan.png" alt="yilan" hidden="true" style="width: 400px" id="yilan"
+                class="pho">
+
+            <img src="./taiwan/major_map/taitung.png" alt="yilan" hidden="true" style="width: 400px" id="taitung"
+                class="pho">
+            <img src="./taiwan/major_map/taipei.png" alt="yilan" hidden="true" style="width: 400px" id="taipei"
+                class="pho">
+            <img src="./taiwan/major_map/newtaipei.png" alt="yilan" hidden="true" style="width: 400px" id="newtaipei"
+                class="pho">
+            <img src="./taiwan/major_map/keelung.png" alt="yilan" hidden="true" style="width: 400px" id="keelung"
+                class="pho">
+            <img src="./taiwan/major_map/taoyuan.png" alt="yilan" hidden="true" style="width: 400px" id="taoyuan"
+                class="pho">
+            <img src="./taiwan/major_map/shinchu.png" alt="yilan" hidden="true" style="width: 400px" id="shinchu"
+                class="pho">
+            <img src="./taiwan/major_map/mioli.png" alt="yilan" hidden="true" style="width: 400px" id="mioli"
+                class="pho">
+            <img src="./taiwan/major_map/taichung.png" alt="yilan" hidden="true" style="width: 400px" id="taichung"
+                class="pho">
+            <img src="./taiwan/major_map/changhua.png" alt="yilan" hidden="true" style="width: 400px" id="changhua"
+                class="pho">
+            <img src="./taiwan/major_map/yunlin.png" alt="yilan" hidden="true" style="width: 400px" id="yunlin"
+                class="pho">
+            <img src="./taiwan/major_map/chiayi.png" alt="yilan" hidden="true" style="width: 400px" id="chiayi"
+                class="pho">
+            <img src="./taiwan/major_map/tainan.png" alt="yilan" hidden="true" style="width: 400px" id="tainan"
+                class="pho">
+            <img src="./taiwan/major_map/kaoshung.png" alt="yilan" hidden="true" style="width: 400px" id="kaoshung"
+                class="pho">
+            <img src="./taiwan/major_map/pindong.png" alt="yilan" hidden="true" style="width: 400px" id="pindong"
+                class="pho">
+            <img src="./taiwan/major_map/hualien.png" alt="yilan" hidden="true" style="width: 400px" id="hualien"
+                class="pho">
+            <img src="./taiwan/major_map/ponghu.png" alt="yilan" hidden="true" style="width: 400px" id="ponghu"
+                class="pho">
+            <img src="./taiwan/major_map/nantou.png" alt="yilan" hidden="true" style="width: 400px" id="nantou"
+                class="pho">
+        </div>
+
+        <!-- iframe src="https://giphy.com/embed/NTpktSQ9w1uCOpFgsP" width="480" height="479" frameBorder="0"
+            class="giphy-embed" allowFullScreen></iframe -->
+        <div class="slider-wrapper" id="sliderWrapper">
+            <!-- Images will be dynamically added here -->
+        </div>
+        <button id="slider-button-prev-button" hidden="true" onclick="moveSlide(-1)"><i
+                class="fas fa-angle-left"></i></button>
+        <button id="slider-button-next-button" hidden="true" onclick="moveSlide(1)"><i
+                class="fas fa-angle-right"></i></button>
+        <a href="entranceTainan.html" style="text-decoration: none; border: none;"><img src="./taiwan/character/5.png"
+                hidden="true" id="pageTainan"></a>
+        <a href="entranceTainan.html" style="text-decoration: none; border: none;">
+            <p id="imgTainan" hidden="true">點我看看台南紀錄!</p>
+        </a>
+        <a id="doggyhref" href=""><img src="./taiwan/bg/doggy.jpg" alt="doggy" hidden="true" id="doggy"></a>
+        <p id="doggytext1" hidden="true"><b>點</b></p>
+        <p id="doggytext2" hidden="true"><b>我</b></p>
+        <img src="./taiwan/seal/visited.jpg" alt="visited" id="visitedImg" hidden="true">
+        <img src="./taiwan/seal/nonvisit.png" alt="visited" id="NonvisitedImg" hidden="true">
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+<script>
+    function check() {
+        alert('np')
+    }
+
+    // 使用 iCheck 美化单选按钮
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square-yellow',
+        radioClass: 'iradio_square-yellow',
+        increaseArea: '50%' // optional
+    }).on('ifClicked', function (event) {
+        // 处理点击事件
+        const selectedValue = $(this).val();
+        handleRegionSelection(selectedValue);
+    });
+
+    function handleRegionSelection(value) {
+        switch (value) {
+            case '台北':
+                showTaipei();
+                break;
+            case '新北':
+                showNewtaipei();
+                break;
+            case '基隆':
+                showKeelung();
+                break;
+            case '桃園':
+                showTaoyuan();
+                break;
+            case '新竹':
+                showShinchu();
+                break;
+            case '苗栗':
+                showMioli();
+                break;
+            case '台中':
+                showTaichung();
+                break;
+            case '彰化':
+                showChanghua();
+                break;
+            case '雲林':
+                showYunlin();
+                break;
+            case '嘉義':
+                showChiayi();
+                break;
+            case '台南':
+                showTainan();
+                break;
+            case '高雄':
+                showKaoshung();
+                break;
+            case '屏東':
+                showPindong();
+                break;
+            case '宜蘭':
+                showYilan();
+                break;
+            case '台東':
+                showTaitung();
+                break;
+            case '花蓮':
+                showHualien();
+                break;
+            case '南投':
+                showNantou();
+                break;
+            case '澎湖':
+                showPonghu();
+                break;
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        const audio = new Audio('./taiwan/music/Belong Together.mp3');
+        if (!audio.played.length) {
+            audio.play();
+        }
+    });
+
+    var place_btn = document.getElementById('place_btn')
+    var page2_btn = document.getElementById('page2_btn')
+    document.addEventListener(" DOMContentLoaded", function () {
+        const images = document.querySelectorAll('.memory')
+        images.forEach((img, index) => {
+            img.style.animationDelay = `${index * 0.5}s`
+        })//temp
+        /*if ($('.memory').eq(0).css('opacity') == 1) {
+        place_btn.hidden = false
+        }*/
+    });
+
+    var taiwan = document.getElementById('taiwan')
+    var yilan = document.getElementById('yilan')
+    var taitung = document.getElementById('taitung')
+    var taipei = document.getElementById('taipei')
+    var newtaipei = document.getElementById('newtaipei')
+    var taoyuan = document.getElementById('taoyuan')
+    var shinchu = document.getElementById('shinchu')
+    var mioli = document.getElementById('mioli')
+    var taichung = document.getElementById('taichung')
+    var changhua = document.getElementById('changhua')
+    var yunlin = document.getElementById('yunlin')
+    var chiayi = document.getElementById('chiayi')
+    var tainan = document.getElementById('tainan')
+    var kaoshung = document.getElementById('kaoshung')
+    var pindong = document.getElementById('pindong')
+    var hualien = document.getElementById('hualien')
+    var nantou = document.getElementById('nantou')
+    var ponghu = document.getElementById('ponghu')
+    var keelung = document.getElementById('keelung')
+    var formTitle = document.getElementById('formTitle')
+    var preBtn = document.getElementById('slider-button-prev-button')
+    var nextBtn = document.getElementById('slider-button-next-button')
+    var pageTainan = document.getElementById('pageTainan')
+    var imgTainan = document.getElementById('imgTainan')
+    var doggy = document.getElementById('doggy')
+    var doggyhref = document.getElementById('doggyhref')
+    var doggytext1 = document.getElementById('doggytext1')
+    var doggytext2 = document.getElementById('doggytext2')
+    var visitedImg = document.getElementById('visitedImg')
+    var NonvisitedImg = document.getElementById('NonvisitedImg')
+
+    function clearAll() {
+        yilan.hidden = true
+        taitung.hidden = true
+        taipei.hidden = true
+        newtaipei.hidden = true
+        keelung.hidden = true
+        taoyuan.hidden = true
+        shinchu.hidden = true
+        mioli.hidden = true
+        taichung.hidden = true
+        changhua.hidden = true
+        yunlin.hidden = true
+        chiayi.hidden = true
+        tainan.hidden = true
+        kaoshung.hidden = true
+        pindong.hidden = true
+        hualien.hidden = true
+        nantou.hidden = true
+        ponghu.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        doggy.hidden = true
+        visitedImg.hidden = true
+        NonvisitedImg.hidden = true
+    }
+    document.getElementById('sliderWrapper').addEventListener('mouseover', stopAutoSlide);
+    document.getElementById('sliderWrapper').addEventListener('mouseout', startAutoSlide);
+
+    function showTaipei() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        taipei.hidden = false
+        stampVisited()
+        taipei.classList.add('animate');
+        taipei.addEventListener('animationend', function () {
+            taipei.classList.remove('animate'); // 动画结束后移除类以便下一次触发
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        taipeiaddImages();
+
+
+    }
+
+    function showNewtaipei() {
+
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        newtaipei.hidden = false
+        stampVisited()
+        newtaipei.classList.add('animate');
+        newtaipei.addEventListener('animationend', function () {
+            newtaipei.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        newtaipeiaddImages()
+
+
+    }
+
+    function showKeelung() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        keelung.hidden = false
+        stampVisited()
+        keelung.classList.add('animate');
+        keelung.addEventListener('animationend', function () {
+            keelung.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        keelungaddImages()
+
+    }
+
+    function showTaoyuan() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        taoyuan.hidden = false
+        stampVisited()
+        taoyuan.classList.add('animate');
+        taoyuan.addEventListener('animationend', function () {
+            taoyuan.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        taoyuanaddImages()
+    }
+
+    function showShinchu() {
+        clearAll()
+        clearImg()
+        doggy.hidden = false
+        doggytext1.hidden = false
+        doggytext2.hidden = false
+        doggyhref.href = 'Hsinchu.html'
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        shinchu.hidden = false
+        stampNonVisited()
+        shinchu.classList.add('animate');
+        shinchu.addEventListener('animationend', function () {
+            shinchu.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = true
+        nextBtn.hidden = true
+
+    }
+
+    function showMioli() {
+        clearAll()
+        clearImg()
+        doggy.hidden = false
+        doggytext1.hidden = false
+        doggytext2.hidden = false
+        doggyhref.href = 'Miaoli.html'
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        mioli.hidden = false
+        stampNonVisited()
+        mioli.classList.add('animate');
+        mioli.addEventListener('animationend', function () {
+            mioli.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = true
+        nextBtn.hidden = true
+    }
+
+    function showTaichung() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        taichung.hidden = false
+        stampVisited()
+        taichung.classList.add('animate');
+        taichung.addEventListener('animationend', function () {
+            taichung.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        taichungaddImages()
+    }
+
+    function showChanghua() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        changhua.hidden = false
+        stampVisited()
+        changhua.classList.add('animate');
+        changhua.addEventListener('animationend', function () {
+            changhua.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        changhuaaddImages()
+    }
+
+    function showYunlin() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        yunlin.hidden = false
+        stampVisited()
+        yunlin.classList.add('animate');
+        yunlin.addEventListener('animationend', function () {
+            yunlin.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        yunlinaddImages()
+    }
+
+    function showChiayi() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        chiayi.hidden = false
+        stampVisited()
+        chiayi.classList.add('animate');
+        chiayi.addEventListener('animationend', function () {
+            chiayi.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        chiayiaddImages()
+    }
+
+    function showTainan() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        pageTainan.hidden = false
+        imgTainan.hidden = false
+        tainan.hidden = false
+        stampVisited()
+        tainan.classList.add('animate');
+        tainan.addEventListener('animationend', function () {
+            tainan.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        tainanaddImages()
+
+    }
+
+    function showKaoshung() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        kaoshung.hidden = false
+        stampVisited()
+        kaoshung.classList.add('animate');
+        kaoshung.addEventListener('animationend', function () {
+            kaoshung.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        kaoshungaddImages()
+    }
+
+    function showPindong() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        pindong.hidden = false
+        stampVisited()
+        pindong.classList.add('animate');
+        pindong.addEventListener('animationend', function () {
+            pindong.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        pindongaddImages()
+    }
+
+    function showYilan() {
+        clearAll()
+        clearImg()
+        doggy.hidden = false
+        doggytext1.hidden = false
+        doggytext2.hidden = false
+        doggyhref.href = 'Yilan.html'
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        yilan.hidden = false
+        stampNonVisited()
+        yilan.classList.add('animate');
+        yilan.addEventListener('animationend', function () {
+            yilan.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = true
+        nextBtn.hidden = true
+    }
+
+    function showHualien() {
+        clearAll()
+        clearImg()
+        doggy.hidden = false
+        doggytext1.hidden = false
+        doggytext2.hidden = false
+        doggyhref.href = 'Hualien.html'
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        hualien.hidden = false
+        stampNonVisited()
+        hualien.classList.add('animate');
+        hualien.addEventListener('animationend', function () {
+            hualien.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = true
+        nextBtn.hidden = true
+    }
+
+    function showTaitung() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        taitung.hidden = false
+        stampVisited()
+        taitung.classList.add('animate');
+        taitung.addEventListener('animationend', function () {
+            taitung.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        taitungaddImages()
+
+    }
+
+    function showNantou() {
+        clearAll()
+        clearImg()
+        doggy.hidden = false
+        doggytext1.hidden = false
+        doggytext2.hidden = false
+        doggyhref.href = 'Nantou.html'
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        nantou.hidden = false
+        stampNonVisited()
+        nantou.classList.add('animate');
+        nantou.addEventListener('animationend', function () {
+            nantou.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = true
+        nextBtn.hidden = true
+    }
+    function showPonghu() {
+        clearAll()
+        clearImg()
+        doggy.hidden = true
+        doggytext1.hidden = true
+        doggytext2.hidden = true
+        pageTainan.hidden = true
+        imgTainan.hidden = true
+        ponghu.hidden = false
+        stampVisited()
+        ponghu.classList.add('animate');
+        ponghu.addEventListener('animationend', function () {
+            ponghu.classList.remove('animate');
+        }, { once: true });
+        preBtn.hidden = false
+        nextBtn.hidden = false
+        ponghuaddImages()
+    }
+
+    let currentSlide = 0;
+
+
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll('.slider-wrapper img');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if (index == currentSlide) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function startAutoSlide() {
+        intervalId = setInterval(function () {
+            moveSlide(1);
+        }, 2500);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(intervalId);
+    }
+
+    function stampVisited() {
+        visitedImg.hidden = false
+        visitedImg.classList.toggle('visited');
+        visitedImg.addEventListener('animationend', function () {
+            visitedImg.classList.remove('visited');
+        }, { once: true });
+    }
+
+    function stampNonVisited() {
+        NonvisitedImg.hidden = false
+        NonvisitedImg.classList.toggle('non-visited');
+        NonvisitedImg.addEventListener('animationend', function () {
+            visitedImg.classList.remove('non-visited');
+        }, { once: true });
+    }
+
+
+    function taipeiaddImages() {
+        const images = [
+            './taiwan/memory/Taipei/2.jpg',
+            './taiwan/memory/Taipei/5.jpg',
+            './taiwan/memory/Taipei/3.jpg',
+            './taiwan/memory/Taipei/4.jpg',
+            './taiwan/memory/Taipei/1.jpg',
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+        // startAutoSlide();
+    }
+
+    function newtaipeiaddImages() {
+        const images = [
+            './taiwan/memory/Newtaipei/4.jpg',
+            './taiwan/memory/Newtaipei/3.jpg',
+            './taiwan/memory/Newtaipei/1.jpg',
+            './taiwan/memory/Newtaipei/2.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function keelungaddImages() {
+        const images = [
+            './taiwan/memory/Keelung/4.jpg',
+            './taiwan/memory/Keelung/5.jpg',
+            './taiwan/memory/Keelung/1.jpg',
+            './taiwan/memory/Keelung/2.jpg',
+            './taiwan/memory/Keelung/3.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function taoyuanaddImages() {
+        const images = [
+            './taiwan/memory/Taoyuan/1.jpg',
+            './taiwan/memory/Taoyuan/2.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function taichungaddImages() {
+        const images = [
+            './taiwan/memory/Taichung/2.jpg',
+            './taiwan/memory/Taichung/1.jpg',
+            './taiwan/memory/Taichung/4.jpg',
+            './taiwan/memory/Taichung/3.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function changhuaaddImages() {
+        const images = [
+            './taiwan/memory/Changhua/2.jpg',
+            './taiwan/memory/Changhua/1.jpg',
+            './taiwan/memory/Changhua/4.jpg',
+            './taiwan/memory/Changhua/3.jpg',
+            './taiwan/memory/Changhua/5.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function yunlinaddImages() {
+        const images = [
+            './taiwan/memory/Yunlin/2.jpg',
+            './taiwan/memory/Yunlin/1.jpg',
+            './taiwan/memory/Yunlin/4.jpg',
+            './taiwan/memory/Yunlin/3.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function chiayiaddImages() {
+        const images = [
+            './taiwan/memory/Chiayi/2.jpg',
+            './taiwan/memory/Chiayi/1.jpg',
+            './taiwan/memory/Chiayi/3.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function tainanaddImages() {
+        const images = [
+            './taiwan/memory/Tainan/2.jpg',
+            './taiwan/memory/Tainan/1.jpg',
+            './taiwan/memory/Tainan/4.jpg',
+            './taiwan/memory/Tainan/3.jpg',
+            './taiwan/memory/Tainan/5.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function kaoshungaddImages() {
+        const images = [
+            './taiwan/memory/Kaoshung/2.jpg',
+            './taiwan/memory/Kaoshung/1.jpg',
+            './taiwan/memory/Kaoshung/4.jpg',
+            './taiwan/memory/Kaoshung/3.jpg',
+            './taiwan/memory/Kaoshung/5.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function pindongaddImages() {
+        const images = [
+            './taiwan/memory/Pindong/2.jpg',
+            './taiwan/memory/Pindong/1.jpg',
+            './taiwan/memory/Pindong/4.jpg',
+            './taiwan/memory/Pindong/3.jpg',
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function taitungaddImages() {
+        const images = [
+            './taiwan/memory/Taitung/2.jpg',
+            './taiwan/memory/Taitung/1.jpg',
+            './taiwan/memory/Taitung/4.jpg',
+            './taiwan/memory/Taitung/3.jpg',
+            './taiwan/memory/Taitung/5.jpg'
+
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+
+    function ponghuaddImages() {
+        const images = [
+            './taiwan/memory/Ponghu/2.jpg',
+            './taiwan/memory/Ponghu/1.jpg',
+            './taiwan/memory/Ponghu/4.jpg',
+            './taiwan/memory/Ponghu/3.jpg',
+            './taiwan/memory/Ponghu/5.jpg'
+        ];
+        const sliderWrapper = document.getElementById('sliderWrapper');
+
+        images.forEach((imageUrl, index) => {
+            const img = new Image();
+            img.src = imageUrl;
+            sliderWrapper.appendChild(img);
+            if (index == 0) {
+                img.classList.add('active');
+            }
+        });
+    }
+    function clearImg() {
+        document.getElementById('sliderWrapper').innerHTML = '';
+        // stopAutoSlide()
+    }
+    var audio = document.getElementById('audio');
+    var muteIcon = document.getElementById('muteIcon');
+    muteIcon.addEventListener('click', function () {
+        if (audio.muted) {
+            audio.play();
+            audio.muted = false;
+            muteIcon.src = './taiwan/music/volume.png';
+        } else {
+
+            audio.muted = true;
+            muteIcon.src = './taiwan/music/mute.png';
+        }
+    });
+
+    /*let currentSlide = 0;
+    function moveSlide(direction) {
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    const totalSlides = sliderWrapper.children.length;
+    const slideWidth = sliderWrapper.children[0].offsetWidth;
+
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    sliderWrapper.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+    }*///拉出來的感覺
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+</html>

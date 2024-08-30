@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+
+    <title>！Attention！</title>
+    <style>
+        .dialog {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body style="overflow-y: hidden;">
+    <nav class="">
+        <div>
+            <a href=" index.html" class="nav-logo">
+                <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                <span class="nav-logo-word"><b>Our Memory</b></span>
+            </a>
+        </div>
+        <div class="nav-btns">
+            <img id="muteIcon" class="mute-icon" src="./taiwan/music/mute.png" width="20px" alt="音訊切換圖示">
+            <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+            <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+            <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+        </div>
+    </nav>
+
+    <!--nav class=" navbar navbar-default fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand" style="display: inline-block;
+            font-size: 30px;
+            margin-top: 0px;"><img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" style="width: 40px;"> <b>Our
+                    Memory</b></a>
+
+        </div>
+        <div class="collapse navbar-collapse " id="bs-nav-demo">
+            <ul class="nav navbar-nav" mx-auto>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2.html">How's Today</a></li>
+                <li><a href="page3.html">Attention</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+        </div>
+    </div>
+    </nav-->
+    <audio id="audio" loop muted>
+        <source src="./taiwan/music/Curls In The Wind.mp3" type="audio/mpeg">
+    </audio>
+    <div>
+        <h1 id="top_h1" class="remove">！Attention！Attention！Attention！Attention！Attention！Attention！Attention！</h1>
+
+        <button onclick="warn1()" ondblclick="warn2()" id="pag3b" class="remove">Do not press the button</button>
+        <a href="index.html"><button id="final" hidden="true">Go Back To Home Page</button></a>
+        <div class="remove"><img src="./taiwan/character/5.png" alt="" style="width: 100px;float:inherit;" id="mousee"
+                hidden="true" class="warn1"></div>
+        <div class="warn1 remove" id="text1" hidden="true" style="float: inline-start;">This is the first
+            warning!</div>
+
+
+        <h1 id="bottom_h1" class="remove">！Attention！Attention！Attention！Attention！Attention！Attention！Attention！</h1>
+
+        <div id="finalImg"></div>
+        <p id="finalText"></p>
+    </div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        var dialogIndex = 0;
+        var dialogCount = 0;
+        var maxDialogs = 5;
+
+        function showDialog() {
+            if (dialogCount < maxDialogs) {
+
+                var dialog = $('<div class="dialog" title="Warning">!!!!!!!!!!!Warning!!!!!!!!!!!</div>');
+
+                $("body").append(dialog);
+
+                dialog.dialog({
+                    modal: true,
+                    autoOpen: true,
+                    buttons: {
+                        Ok: function () {
+                            $(this).dialog("close");
+                            // 关闭对话框后隔0.5秒再显示下一个对话框
+                            setTimeout(function () {
+                                showDialog();
+                            }, 500);
+                        }
+                    },
+                    close: function () {
+                        // 移除对话框div
+                        $(this).remove();
+
+                    }
+                });
+                dialogCount++;
+            }
+
+            if (dialogCount == maxDialogs) {
+                setTimeout(function () {
+                    var dialog = $('<div class="dialog" title="Warning">你確定要進入這個頁面嗎....?</div>');
+
+                    $("body").append(dialog);
+
+                    dialog.dialog({
+                        modal: true,
+                        autoOpen: true,
+                        buttons: {
+                            確定: function () {
+                                $(this).dialog("close");
+                            }
+                        },
+                        close: function () {
+                            $(this).remove();
+
+                        }
+                    });
+                }, 1000);
+
+                dialogCount++;
+            }
+        }
+        showDialog();
+    });
+
+    var mous = document.getElementById("mousee");
+    var butt = document.getElementById("pag3b");
+    var text1 = document.getElementById("text1");
+    butt.addEventListener('mouseover', function () {
+        mous.hidden = false;
+        if (warntag == 0) {
+            text1.hidden = false;
+        }
+    });
+    butt.addEventListener('mouseout', function () {
+        mous.hidden = true;
+        text1.hidden = true;
+    });
+    butt.addEventListener('mouseout', function () {
+
+    });
+
+    var warntag = 0;
+    function warn1() {
+
+        if (warntag == 0) {
+            mous.classList.toggle('rounding');
+            // text1.classList.toggle('rounding');
+            butt.innerText = 'PLEASE STOP!!!'
+            text1.hidden = true;
+            warntag = 1
+
+        }
+
+        else if (warntag == 1) {
+            mous.classList.remove('rounding');
+            text1.hidden = false;
+            // text1.classList.remove('rounding');
+            butt.innerText = 'Do not press the button'
+            warntag = 0
+        }
+    }
+
+    function warn2() {
+        const remove = document.querySelectorAll('.remove')
+        remove.forEach((item) => {
+            item.innerHTML = ""
+            item.remove()
+        })
+
+        var final_btn = document.getElementById('final')
+        final_btn.hidden = false
+
+        setTimeout(function () {
+            var finalImg = document.getElementById('finalImg')
+            const img = new Image();
+            img.src = './taiwan/character/0.png';
+            img.id = 'finalImging'
+            finalImg.appendChild(img);
+            const audio = new Audio('./taiwan/audio/cat.mp3');
+            if (!audio.played.length) {
+                audio.play();
+            }
+
+            // $('#finalImging').fadeIn(5000)
+        }, 1000);//temp
+
+        setTimeout(function () {
+            var finalText = document.getElementById('finalText')
+            finalText.innerText = 'You are the bravest!'
+        }, 1000);//temp
+
+
+    }
+
+    var audio = document.getElementById('audio');
+    var muteIcon = document.getElementById('muteIcon');
+    muteIcon.addEventListener('click', function () {
+        if (audio.muted) {
+            audio.play();
+            audio.muted = false;
+            muteIcon.src = './taiwan/music/volume.png';
+        } else {
+
+            audio.muted = true;
+            muteIcon.src = './taiwan/music/mute.png';
+        }
+    });
+
+
+</script>
+
+</html>

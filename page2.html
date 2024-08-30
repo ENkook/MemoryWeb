@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/icheck/skins/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/icheck/icheck.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainkk.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./taiwan/bg/mousee.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>How's today</title>
+</head>
+
+<body style="overflow-y: hidden;">
+
+    <!--nav class="navbar  navbar-default fixed-top ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-nav-demo" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand" style="display: inline-block;
+                font-size: 30px;
+                margin-top: 0px;"><img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" style="width: 40px;">
+                        <b>Our Memory</b></a>
+
+                </div>
+                <div class="collapse navbar-collapse " id="bs-nav-demo">
+                    <ul class="nav navbar-nav" mx-auto>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="page2.html">How's Today</a></li>
+                        <li><a href="page3.html">Attention</a></li>
+                        </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+                </div>
+            </div>
+        </nav-->
+
+    <nav class="">
+        <div>
+            <a href="index.html" class="nav-logo">
+                <img id="logo_home" src="./taiwan/bg/mousee.png" alt="Logo" width="60px" height="60px">
+                <span class="nav-logo-word" style="text-decoration: none;"><b>Our Memory</b></span>
+            </a>
+        </div>
+        <div class="nav-btns">
+            <img id="muteIcon" class="mute-icon" src="./taiwan/music/mute.png" width="20px" alt="音訊切換圖示">
+            <a href="index.html" class="nav-btns-word"><span>Home</span></a>
+            <a href="page2.html" class="nav-btns-word"><span>How's Today</span></a>
+            <a href="page3.html" class="nav-btns-word"><span>Attention</span></a>
+        </div>
+    </nav>
+    <br><br>
+
+
+    <section style="margin-top: -30px; ">
+        <h1 style="text-align: center; color: rgb(110, 76, 32);">~ 今日綜合想法及運勢分析 ~ </h1>
+        <audio id="audio" loop muted>
+            <source src="./taiwan/music/Dont You Worry.mp3" type="audio/mpeg">
+        </audio>
+        <br><br><br><button id="test_btn" onclick="tell_all()">一鍵告訴我全部!</button><br><br><br><br><br>
+        <table border="1" style="width: 100%; border: 8px; margin-top: -20px;" id="test_table">
+
+            <tr>
+                <td class="teest">
+                    <table class="test">
+                        <tr>
+                            <th>幸運色：<br></th>
+                        </tr>
+
+                        <td>
+                            <div style="margin: 10px;" id="circling"></div>
+                        </td>
+
+                        <tr>
+                            <td><button onclick="coloring()">我只想知道這個!</button></td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="teest">
+                    <table class="test">
+                        <tr>
+                            <th>建議食物：</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="fooding" style="font-size: 35px;">哈哈哈</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="feeding()">我只想知道這個!</button></td>
+                        </tr>
+                    </table>
+                </td>
+
+
+                <td class="teest">
+                    <table class="test">
+                        <tr>
+                            <th>解答之書：</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="answers" style="font-size: 35px;">請尊重結果！</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="answering()">我只想知道這個!</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="teest">
+                    <table class="test">
+                        <tr>
+                            <th>代表今天的角色：</th>
+                        </tr>
+                        <tr>
+                            <td><img src="" alt="是誰呢!" id="character"><br> </td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="charchoose()">我只想知道這個!</button></td>
+                        </tr>
+                    </table>
+                </td>
+
+
+                <td class="teest">
+                    <table class="test">
+                        <tr>
+                            <th>幸運方向：</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="directing" style="font-size: 35px;">哈哈哈</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="directing()">我只想知道這個!</button></td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="teest">
+                    <table class="test">
+                        <tr>
+                            <th>網頁的分數:</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="scoring" style="font-size: 35px;">100分!!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="scoring()">我只想知道這個!</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+</body>
+
+<script>
+    function coloring() {
+        var circles = document.getElementById("circling");
+        var randomR = Math.floor(Math.random() * 255);
+        var randomB = Math.floor(Math.random() * 255);
+        var randomG = Math.floor(Math.random() * 255);
+        circles.style.backgroundColor = 'rgb(' + randomR + ',' + randomG + ',' + randomB + ')';
+
+    }
+
+    function feeding() {
+        var fooding = document.getElementById("fooding");
+        var foodList = ['大冰奶', '鐵板麵', '哈密瓜', '咖哩', '義大利麵', '荔枝', '鍋燒意麵', '火鍋', '控肉飯', '韓式大醬鍋', '丹丹', '壽司', '泰式'];
+        var randomFood = Math.floor(Math.random() * foodList.length);
+        fooding.innerText = foodList[randomFood]
+
+    }
+
+    function charchoose() {
+        var character = document.getElementById("character");
+        var randomChar = Math.floor(Math.random() * 8);
+        character.src = "./taiwan/character/" + randomChar + ".png"
+    }
+
+    function answering() {
+        var answers = document.getElementById("answers");
+        var answerList = ['不要害怕冒險', '堅信改變是可能的', '感恩每一個新的日出', '創造你自己的命運', '不要讓別人決定', '變化是成長的標誌', '不要害怕挑戰', '睡覺就好', '你需要吃飯'
+            , '新生', '珍惜當下', '了解自己的需求', '保持靈活性', '適應變化是成功之道', '花時間思考', '不要擔心他人的看法', '冷靜一點', '勇敢表達自己的意見', '學會感恩', '你需要睡覺', '找到內心的平衡'
+            , '花時間深思熟慮', '忽視它', '追随你心', '不要害怕風險', '尋找新的出路', '保持專注', '堅信自己', '保持帥哥', '別太天真', '愛你寶寶']
+        var randomAnswer = Math.floor(Math.random() * answerList.length);
+        answers.innerText = answerList[randomAnswer]
+
+    }
+
+    function directing() {
+        var directing = document.getElementById("directing");
+        var DireList = ['東', '南', '西', '北', '東南', '東北', '西南', '西北', '都不適合...', '都好呦!!'];
+        var randomDire = Math.floor(Math.random() * DireList.length);
+        directing.innerText = DireList[randomDire]
+    }
+
+    function scoring() {
+        var scoring = document.getElementById("scoring");
+        var ScoreList = ['100', '100!', '100!!', '100!!!', '一定100', '就是100', '1000', '999', '爆錶了...', '200'];
+        var randomScore = Math.floor(Math.random() * ScoreList.length);
+        scoring.innerText = ScoreList[randomScore]
+    }
+
+
+    function tell_all() {
+        coloring();
+        feeding();
+        charchoose();
+        answering();
+        directing();
+        scoring();
+    }
+
+    var audio = document.getElementById('audio');
+    var muteIcon = document.getElementById('muteIcon');
+    muteIcon.addEventListener('click', function () {
+        if (audio.muted) {
+            audio.play();
+            audio.muted = false;
+            muteIcon.src = './taiwan/music/volume.png';
+        } else {
+
+            audio.muted = true;
+            muteIcon.src = './taiwan/music/mute.png';
+        }
+    });
+</script>
+
+</html>
